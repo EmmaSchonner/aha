@@ -1,0 +1,28 @@
+// wrong
+
+CREATE TABLE IF NOT EXISTS cdsammlung(
+   cdnummer           INTEGER   PRIMARY KEY   AUTOINCREMENT   NOT NULL,
+   albumname          TEXT      PRIMARY KEY                   NOT NULL,
+   kuenstler          TEXT                                    NOT NULL,
+   genre              TEXT                                    NOT NULL,
+   anzahllieder       INTEGER,
+   gesamtlaenge       REAL,
+   erscheinungsjahr   INTEGER
+);
+
+
+// right
+
+CREATE TABLE IF NOT EXISTS cdsammlung(
+   cdnummer    INTEGER   PRIMARY KEY   AUTOINCREMENT   NOT NULL,
+   albumname   TEXT      PRIMARY KEY                   NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS alben(
+   albumname          TEXT      PRIMARY KEY   NOT NULL,
+   kuenstler          TEXT                    NOT NULL,
+   genre              TEXT                    NOT NULL,
+   anzahllieder       INTEGER,
+   gesamtlaenge       REAL,
+   erscheinungsjahr   INTEGER
+);
